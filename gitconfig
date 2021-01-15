@@ -1,9 +1,0 @@
-[user]
-	name = Mislav Marohnić
-	email = mislav.marohnic@gmail.com
-[push]
-	default = simple
-[credential]
-	helper = osxkeychain
-[hub]
-	protocol = https

@@ -14,11 +14,9 @@ for file in "$PWD"/*; do
   ln -sfnv ${file#$HOME/} "${HOME}/${dotname}"
 done
 
-VSCODE_USER_DIR=~/Library/Application\ Support/Code/User
-mkdir -p "$VSCODE_USER_DIR"
-for file in "$PWD/vscode/"*; do
-  name="$(basename "$file")"
-  [ -e "$VSCODE_USER_DIR/$name" ] || ln -sfnv "$file" "$VSCODE_USER_DIR/$name"
-done
-
-~/.osx
+# VSCODE_USER_DIR=~/Library/Application\ Support/Code/User
+# mkdir -p "$VSCODE_USER_DIR"
+# for file in "$PWD/vscode/"*; do
+#   name="$(basename "$file")"
+#   [ -e "$VSCODE_USER_DIR/$name" ] || ln -sfnv "$file" "$VSCODE_USER_DIR/$name"
+# done
