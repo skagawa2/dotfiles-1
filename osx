@@ -50,18 +50,18 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 chflags nohidden ~/Library
 
 # Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool true
+# defaults write com.apple.dashboard mcx-disabled -bool true
 
 # Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
+# defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Automatically hide the Dock
 defaults write com.apple.dock autohide -bool true
 
 # Configure iTerm2 to read preferences from Dropbox
-defaults write com.googlecode.iterm2 PrefsCustomFolder ~/Dropbox
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -int 1
+# defaults write com.googlecode.iterm2 PrefsCustomFolder ~/Dropbox
+# defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -int 1
 
 # Set lock screen text
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText \
-  "'Found this computer? Please contact Mislav Marohnić at mislav@github.com'"
+  "'Found this computer? Please contact Shaw Kagawa at shaw.kagawa0227@gmail.com'"
