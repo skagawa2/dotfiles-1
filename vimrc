@@ -6,7 +6,7 @@ filetype plugin indent on       " load file type plugins + indentation
 
 "" Whitespace
 set nowrap                      " don't wrap lines
-set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
+set softtabstop=4 shiftwidth=4  " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
@@ -16,12 +16,11 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-set number
-set autoindent
-set cindent
-set expandtab
-set shiftwidth=4
-set softtabstop=4
+set wrap                        " word wrap
+
+set number                      " set line numbers
+set autoindent                  " smart indenting
+set cindent                     " indenting braces
 
 set backupdir=/tmp//
 set directory=/tmp//
