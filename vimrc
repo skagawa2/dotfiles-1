@@ -17,11 +17,24 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 set wrap                        " word wrap
+set nospell                     " don't set spellchecker
 
 set number                      " set line numbers
 set autoindent                  " smart indenting
 set cindent                     " indenting braces
 
-set backupdir=/tmp//
-set directory=/tmp//
-set undodir=/tmp//
+set backupdir=$HOME/.vim/backup " where to save backup files
+set undofile                    " Save undos after file closes
+set undodir=$HOME/.vim/undo     " where to save undo histories
+set undolevels=1000             " How many undos
+set undoreload=10000            " number of lines to save for undo
+
+call plug#begin()
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-rmarkdown'
+call plug#end()
+
+" vim-pandoc-syntax settings
+let g:pandoc#syntax#conceal#use = 0
+
