@@ -38,7 +38,8 @@ GITCOL='\[\e[38;5;202m\]'
 FAILCOL='\[\e[31m\]'
 
 # PS1="$USERCOL\u$CLEAR@$HOSTCOL\h $CLEAR[$DIRCOL\w$CLEAR] $CLEAR$(_git_prompt)\n"
-PS1="$DIRCOL\w$CLEAR$(_git_prompt) "
+PS1="$USERCOL\u $DIRCOL\w$CLEAR$(_git_prompt) "
+# PS1="$DIRCOL\w$CLEAR$(_git_prompt) "
 PS1+='\[\e[31m\]$(_failed_status)\[\e[m\]$(_success_status) '
 
 # eval "$(direnv hook bash)"
