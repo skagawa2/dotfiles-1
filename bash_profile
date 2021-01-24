@@ -52,7 +52,8 @@ PS1+='\[\e[31m\]$(_failed_status)\[\e[m\]$(_success_status) '
 #   eval "$(docker-machine env $machine)"
 # }
 
-
 alias rm="rm -i"
 alias mv="mv -i"
 alias ll="ls -lah"
+
+source ~/.bashrc
