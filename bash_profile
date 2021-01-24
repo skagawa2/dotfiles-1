@@ -17,29 +17,29 @@ export EVENT_NOKQUEUE=1
 # PATH=bin:"$PATH"
 # export PATH="$(consolidate-path "$PATH")"
 
-# export HOMEBREW_NO_INSTALL_CLEANUP=true
-# bash_completion="$(brew --prefix 2>/dev/null)/etc/bash_completion"
-# if [ -r "$bash_completion" ]; then
-#   source "$bash_completion"
-# fi
-# unset bash_completion
-# 
-# [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-
 _git_prompt() {
   local ref="$(command git symbolic-ref -q HEAD 2>/dev/null)"
   echo "${ref:+ (${ref#refs/heads/})}"
 }
 
 _failed_status() {
-  [ "$PIPESTATUS" -ne 0 ] && printf "$"
+  [ "$PIPESTATUS" -ne 0 ] && echo "\$"
 }
 
 _success_status() {
-  [ "$PIPESTATUS" -eq 0 ] && printf "$"
+  [ "$PIPESTATUS" -eq 0 ] && echo "\$"
 }
 
-PS1='\[\e[0;31m\]\w\[\e[m\]$(_git_prompt) \[\e[1;31m\]$(_failed_status)\[\e[m\]$(_success_status) '
+CLEAR='\[\e[m\]'
+USERCOL='\[\e[38;5;1m\]'
+HOSTCOL='\[\e[38;5;202m\]'
+DIRCOL='\[\e[38;5;4m\]'
+GITCOL='\[\e[38;5;202m\]'
+FAILCOL='\[\e[31m\]'
+
+# PS1="$USERCOL\u$CLEAR@$HOSTCOL\h $CLEAR[$DIRCOL\w$CLEAR] $CLEAR$(_git_prompt)\n"
+PS1="$DIRCOL\w$CLEAR$(_git_prompt) "
+PS1+='\[\e[31m\]$(_failed_status)\[\e[m\]$(_success_status) '
 
 # eval "$(direnv hook bash)"
 
@@ -51,3 +51,8 @@ PS1='\[\e[0;31m\]\w\[\e[m\]$(_git_prompt) \[\e[1;31m\]$(_failed_status)\[\e[m\]$
 #   docker-machine start $machine
 #   eval "$(docker-machine env $machine)"
 # }
+
+
+alias rm="rm -i"
+alias mv="mv -i"
+alias ll="ls -lah"
