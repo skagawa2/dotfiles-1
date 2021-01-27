@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+type -p brew >/dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+brew install --cask google-chrome slack iterm2 tmux go
+
 brew bundle --global --no-upgrade
 
 grep ^cask ~/.Brewfile | awk '{print $2}' | sed "s/[\"\"']//g" | while read cask; do
