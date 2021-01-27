@@ -9,15 +9,11 @@ brew 'ag'
 brew 'universal-ctags', args: %w[HEAD]
 brew 'bash-completion'
 brew 'openssl'
-brew 'memcached'
 brew 'node'
 brew 'redis'
 brew 'wget'
 brew 'go'
 brew 'git'
-brew 'hub'
-brew 'youtube-dl'
-brew 'ffmpeg', args: %w[--with-libvpx --with-libvorbis]
 brew 'nodenv'
 
 cask 'dropbox'
