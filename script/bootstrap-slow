@@ -3,7 +3,8 @@ set -e
 
 type -p brew >/dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-brew install --cask google-chrome slack iterm2 tmux go
+# brew install --cask google-chrome slack iterm2
+brew install tmux go
 
 brew bundle --global --no-upgrade
 
@@ -18,6 +19,10 @@ grep ^cask ~/.Brewfile | awk '{print $2}' | sed "s/[\"\"']//g" | while read cask
     echo "warning: \`$cask' not found in /Applications" >&2
   fi
 done
+
+# install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 
 # if ! [ -e ~/.vim ]; then
 #   git clone https://github.com/mislav/vimfiles ~/.vim
