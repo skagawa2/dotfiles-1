@@ -11,7 +11,7 @@ set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
 "" Searching
-set hlsearch                    " highlight matches
+set nohlsearch                  " don't highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
@@ -33,6 +33,7 @@ call plug#begin()
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-rmarkdown'
+Plug 'craigemery/vim-autotag'
 call plug#end()
 
 " vim-pandoc-syntax settings
