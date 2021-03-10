@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -99,3 +99,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+alias rstudio="docker run --rm -p 8787:8787 \
+    -e \"ROOT=TRUE\" \
+    -e USER=rstudio -e PASSWORD=password \
+    -v /Users/shawkagawa/Documents/:/home/rstudio/Documents/ \
+    -v /usr/local/lib/R/4.0/site-library/:/home/rstudio/R/x86_64-pc-linux-gnu-library/4.0/ \
+    --name rstudio rocker/rstudio &; sleep 3; \
+    open http://localhost:8787"
+
+export PATH="/usr/local/sbin:$PATH"

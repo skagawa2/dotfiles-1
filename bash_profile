@@ -116,3 +116,4 @@ alias mv="mv -i"
 alias ll="ls -lah"
 
 source ~/.bashrc
+export PATH="/usr/local/sbin:$PATH"
