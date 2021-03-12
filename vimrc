@@ -29,6 +29,8 @@ set undodir=$HOME/.vim/undo     " where to save undo histories
 set undolevels=1000             " How many undos
 set undoreload=10000            " number of lines to save for undo
 
+set mouse=a
+
 call plug#begin()
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
